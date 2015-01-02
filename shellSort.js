@@ -6,7 +6,8 @@ function defaultCompareFunction(a, b) {
   return a - b;
 }
 
-function shellSort(array, compareFunction, reverse) {
+function shellSort(srcArray, compareFunction, reverse) {
+  var array = srcArray.slice(0);
   var l = array.length;
   var tmp, compare;
 
@@ -21,22 +22,20 @@ function shellSort(array, compareFunction, reverse) {
   }
 
   for (var k = 0; k < 16; k++) {
-    for (var i = incs[k]; i < l; i++) {
+    for (var h = incs[k], i = h; i < l; i++) {
       var v = array[i];
       var j = i;
 
-      while (j >= i && compare(array[j - i], v) > 0) {
-        tmp = array[j];
-        array[j] = array[j - 1];
-        array[j - 1] = tmp;
-        j -= i;
+      while (j >= h && compare(array[j - h], v) > 0) {
+        array[j] = array[j - h];
+        j -= h;
       }
 
-      tmp = array[j];
-      array[j] = array[i];
-      array[i] = tmp;
+      array[j] = v;
     }
   }
+
+  return array;
 }
 
 module.exports = shellSort;
