@@ -1,0 +1,28 @@
+{
+  "name": "shell-sort",
+  "version": "1.0.0",
+  "description": "CommonJS shell sort",
+  "main": "shellSort.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/tadeuzagallo/shell-sort"
+  },
+  "keywords": [
+    "shell-sort",
+    "sort",
+    "javascript",
+    "array"
+  ],
+  "author": "Tadeu Zagallo <tadeuzagallo@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tadeuzagallo/shell-sort/issues"
+  },
+  "homepage": "https://github.com/tadeuzagallo/shell-sort",
+  "devDependencies": {
+    "jest-cli": "^0.2.1"
+  }
+}
