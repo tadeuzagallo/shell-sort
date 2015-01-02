@@ -44,4 +44,27 @@ describe('Shell sort', function () {
       }));
     });
   });
+
+  describe('Reverse', function () {
+    it('Should work with 100 elements', function () {
+      var array = createRandomArray(100, 0, 100);
+      expect(shellSort(array, null, true)).toEqual(array.sort(function (a, b) {
+        return b - a;
+      }));
+    });
+
+    it('Should work with 1000 elements', function () {
+      var array = createRandomArray(1000, 0, 1000);
+      expect(shellSort(array, null, true)).toEqual(array.sort(function (a, b) {
+        return b - a;
+      }));
+    });
+
+    it('Should work with 100000 elements', function () {
+      var array = createRandomArray(100000, 0, 100000);
+      expect(shellSort(array, null, true)).toEqual(array.sort(function (a, b) {
+        return b - a;
+      }));
+    });
+});
 });
